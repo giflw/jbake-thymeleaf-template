@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+    http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.itquasar.multiverse.jbake</groupId>
+    <artifactId>jbake-thymeleaf-template</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <java.version>17</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.release>${java.version}</maven.compiler.release>
+
+    </properties>
+
+
+    <build>
+        <sourceDirectory>${project.basedir}/src/main/jbake</sourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.jbake</groupId>
+                <artifactId>jbake-maven-plugin</artifactId>
+                <version>0.3.5</version>
+                <configuration>
+                    <!--<inputDirectory>${project.basedir}/src/main/resources</inputDirectory> -->
+                    <!--<outputDirectory>${project.build.directory}/classes</outputDirectory> -->
+                </configuration>
+                <executions>
+                    <execution>
+                        <?m2e execute onConfiguration,onIncremental ?>
+                        <id>default-generate</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
